@@ -31,7 +31,7 @@ body {
 .page-shell {
   max-width: 900px;
   margin: 0 auto;
-  padding: 36px 20px 60px;
+  padding: 28px 16px 48px;
 }
 
 .intro-card {
@@ -52,7 +52,7 @@ body {
 }
 
 .photo-frame {
-  width: 168px;
+  width: min(168px, 100%);
   aspect-ratio: 1 / 1;
   border-radius: 28px;
   background: linear-gradient(135deg, rgba(114, 137, 218, 0.5) 0%, rgba(89, 109, 194, 0.95) 100%);
@@ -70,6 +70,9 @@ body {
 
 .hero-content {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .eyebrow {
@@ -93,7 +96,7 @@ h1 {
 }
 
 .body-card {
-  padding: 32px;
+  padding: 32px 28px;
 }
 
 .section + .section {
@@ -111,7 +114,7 @@ h1 {
 
 .hobby-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 12px;
   list-style: none;
   margin: 0;
@@ -166,5 +169,49 @@ h1 {
 
   .hobby-list {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-shell {
+    padding: 20px 14px 32px;
+  }
+
+  .hero-box {
+    padding: 24px 18px;
+    gap: 18px;
+  }
+
+  .photo-frame {
+    width: min(140px, 100%);
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .body-card {
+    padding: 24px 18px;
+  }
+
+  .section h2 {
+    font-size: 1.1rem;
+  }
+
+  .section p {
+    margin-bottom: 12px;
+  }
+
+  .hobby-list {
+    gap: 10px;
+  }
+
+  .sns-list {
+    flex-direction: column;
+  }
+
+  .sns-list li a {
+    width: 100%;
+    text-align: center;
   }
 }
